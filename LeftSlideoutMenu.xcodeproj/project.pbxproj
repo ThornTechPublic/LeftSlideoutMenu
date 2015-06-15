@@ -14,6 +14,7 @@
 		FCDFC08E1B2F7F120015115E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08D1B2F7F120015115E /* Images.xcassets */; };
 		FCDFC0911B2F7F120015115E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08F1B2F7F120015115E /* LaunchScreen.xib */; };
 		FCDFC09D1B2F7F120015115E /* LeftSlideoutMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC09C1B2F7F120015115E /* LeftSlideoutMenuTests.swift */; };
+		FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0A61B2F87B00015115E /* ContainerVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FCDFC0961B2F7F120015115E /* LeftSlideoutMenuTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LeftSlideoutMenuTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFC09B1B2F7F120015115E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFC09C1B2F7F120015115E /* LeftSlideoutMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSlideoutMenuTests.swift; sourceTree = "<group>"; };
+		FCDFC0A61B2F87B00015115E /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				FCDFC0841B2F7F110015115E /* AppDelegate.swift */,
+				FCDFC0A61B2F87B00015115E /* ContainerVC.swift */,
 				FCDFC0861B2F7F110015115E /* FirstViewController.swift */,
 				FCDFC0881B2F7F110015115E /* SecondViewController.swift */,
 				FCDFC08A1B2F7F110015115E /* Main.storyboard */,
@@ -215,6 +218,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */,
 				FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */,
 				FCDFC0851B2F7F110015115E /* AppDelegate.swift in Sources */,
 				FCDFC0871B2F7F110015115E /* FirstViewController.swift in Sources */,
