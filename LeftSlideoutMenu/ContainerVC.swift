@@ -1,11 +1,3 @@
-//
-//  ContainerVC.swift
-//  LeftSlideoutMenu
-//
-//  Created by Robert Chen on 6/15/15.
-//  Copyright (c) 2015 Thorn Technologies. All rights reserved.
-//
-
 import UIKit
 
 class ContainerVC : UIViewController {
@@ -25,9 +17,10 @@ class ContainerVC : UIViewController {
         dispatch_async(dispatch_get_main_queue()) {
             self.closeMenu()
         }
-        
-        // Tab bar controller's child pages have a top-left button that sends toggleMenu notifications
+                
+        // Tab bar controller's child pages have a top-left button toggles the menu
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleMenu", name: "toggleMenu", object: nil)
+        
     }
     
     // Cleanup notifications added in viewDidLoad
@@ -35,7 +28,6 @@ class ContainerVC : UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    // NSNotification selector.  Open or close the menu depending on current state.
     func toggleMenu(){
         isMenuOpen ? closeMenu() : openMenu()
     }
@@ -48,8 +40,8 @@ class ContainerVC : UIViewController {
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         isMenuOpen = true
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
 }

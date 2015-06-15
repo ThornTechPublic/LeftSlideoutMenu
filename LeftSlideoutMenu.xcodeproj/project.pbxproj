@@ -419,6 +419,7 @@
 				FCDFC0A21B2F7F120015115E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCDFC0A31B2F7F120015115E /* Build configuration list for PBXNativeTarget "LeftSlideoutMenuTests" */ = {
 			isa = XCConfigurationList;
@@ -427,6 +428,7 @@
 				FCDFC0A51B2F7F120015115E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
