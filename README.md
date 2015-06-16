@@ -38,15 +38,15 @@ class ContainerVC : UIViewController {
 
 Inside Container View Controller, drop in a `ScrollView` and add constraints in all directions.
 
+Uncheck the box for `Scrolling Enabled`.  This is so that the menu doesn't interfere with horizontal gestures in the app itself.
+
+Check the box for `Paging Enabled`.
+
 Wire the IBOutlet to ContainerVC:
 
 ```
 @IBOutlet weak var scrollView: UIScrollView!
 ```
-
-Uncheck the box for `Scrolling Enabled`.  This is so that the menu doesn't interfere with horizontal gestures in the app itself.
-
-Check the box for `Paging Enabled`.
 
 ### Left Container
 
