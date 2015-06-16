@@ -56,9 +56,9 @@ Drag a `Container View` into the left side of the `ScrollView`.
 
 Hard-code the width to 260. 
 
-Add a constraint for `Equal height` with the ContainerVC's embedded `View`.  Note: don't constrain the height to the ScrollView.
-
 Add constraints for top, left, and right to the containing `ScrollView`.
+
+Add a constraint for `Equal height` with the ContainerVC's embedded `View`.  Note: don't constrain the height to the ScrollView.
 
 Delete the embedded `View Controller` that came with the `Container View`.
 
