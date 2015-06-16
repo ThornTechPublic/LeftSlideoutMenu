@@ -38,9 +38,11 @@ class ContainerVC : UIViewController {
 
 Inside Container View Controller, drop in a `ScrollView` and add constraints in all directions.
 
-Uncheck the box for `Scrolling Enabled`.  This is so that the menu doesn't interfere with horizontal gestures in the app itself.
+Check the box for `Scrolling Enabled`.
 
 Check the box for `Paging Enabled`.
+
+Uncheck the box for `Bounces`.
 
 Wire the IBOutlet to ContainerVC:
 
@@ -98,7 +100,6 @@ Most of the Storyboard configuration is done.  All that's left is to copy the co
 
 The code accomplishes the following:
 
-* Add a flag to track the menu open state
 * Open and close the menu by changing the contentOffset-x
 * Listen for the "toggleMenu" notification
-* Implement the toggleMenu method by opening or closing based on the current state
+* Implement the toggleMenu method by opening or closing based on the current contentOffset.x
