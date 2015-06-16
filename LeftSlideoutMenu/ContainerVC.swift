@@ -5,9 +5,6 @@ class ContainerVC : UIViewController {
     // This value matches the left menu's width in the Storyboard
     let leftMenuWidth:CGFloat = 260
     
-    // Tracks the state of the menu
-    var isMenuOpen = true
-    
     // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -29,18 +26,16 @@ class ContainerVC : UIViewController {
     }
     
     func toggleMenu(){
-        isMenuOpen ? closeMenu() : openMenu()
+        scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
     }
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(){
         scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: true)
-        isMenuOpen = false
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
-        isMenuOpen = true
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
