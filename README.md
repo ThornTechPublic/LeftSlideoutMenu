@@ -2,11 +2,15 @@
 
 This is a sample project with a left slideout menu, and a two-tabbed application for the main body.  The majority of the setup is done in the Storyboard.
 
+![animated gif demo](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuVid.gif)
+
 ## Theory
 
-Apps tend to have a top level container like a `Tab Bar Controller` that cannot be embedded into a View.  The approach here is to wrap the main body and the left menu each inside a `Container View`.  Now both of these elements can be arranged inside a wrapper `View Controller`.  
+Apps tend to have a top level container like a `Tab Bar Controller` that cannot be embedded inside a View.  The approach here is to wrap the main body and the left menu each inside a `Container View`.  Now both of these elements can be arranged inside a wrapper `View Controller`.  
 
-A `ScrollView` is used to open and close the menu by shifting the left menu on and off-screen.  
+![storyboard image](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/containerStoryboard.png)
+
+A `ScrollView` is used to simulate opening and closing the menu by shifting the left menu on/off-screen.  
 
 Since Storyboard changes aren't really portable across projects, here is a recipe on how to recreate this.
 
@@ -18,6 +22,8 @@ Start with a `Tabbed Application`.  This is just to demonstrate that even a `Tab
 
 Uncheck the box `Use Size Classes` for now, to give yourself some elbow room.
 
+![tabbed application](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/tabbedApplicationIcon.png)
+
 ### Containing View Controller
 
 Drop a `View Controller` onto the Storyboard.  This is a container that will hold both the Menu and Tab Bar Controller.
@@ -25,6 +31,8 @@ Drop a `View Controller` onto the Storyboard.  This is a container that will hol
 Check the box for `Is Initial View Controller`.
 
 Change the `Simulated Size` from `Fixed` to `Freeform`.  Set the `Width` to 568 so we can fit the menu and Tab Bar side-by-side.
+
+![use freeform size](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/freeform.png)
 
 Create a new Swift file and set this View Controller's class to ContainerVC.
 
@@ -44,6 +52,8 @@ Check the box for `Paging Enabled`.
 
 Uncheck the box for `Bounces`.
 
+![scrollview properties](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/scrollingEnabled.png)
+
 Wire the IBOutlet to ContainerVC:
 
 ```
@@ -56,11 +66,13 @@ The left container holds the menu, and is not quite the full width of the screen
 
 Drag a `Container View` into the left side of the `ScrollView`.  
 
-Hard-code the width to 260. 
-
 Add constraints for top, left, and right to the containing `ScrollView`.
 
+Hard-code the width to 260. 
+
 Add a constraint for `Equal height` with the ContainerVC's embedded `View`.  Note: don't constrain the height to the ScrollView.
+
+![left container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuConstraints.png)
 
 Delete the embedded `View Controller` that came with the `Container View`.
 
@@ -76,9 +88,13 @@ Add constraints to the containing `ScrollView` for top, right, and bottom.  Conn
 
 Constraint both `Equal height` and `Equal width` to the ContainerVC's embedded `View`.  Note: do not constrain these to the ScrollView.
 
+![right container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/rightConstraints.png)
+
 Again, delete the embedded View Controller that came free with the `Container View`.  Instead, create an `embed` segue to the `Tab Bar Controller`.
 
 To create a little visual separation between the two containers, add a `Runtime Attribute` to the `Right Container`.  Add `layer.shadowOpacity` with a `number` of `0.8`.
+
+![set runtime attributes](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/runtimeAttributes.png)
 
 ### First and Second Tabs
 
