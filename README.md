@@ -70,7 +70,7 @@ The right container holds the main body of your app, namely the `Tab Bar Control
 
 Drag a second `Container View` into the right side of the `ScrollView`.
 
-Add constraints to the containing `ScrollView` for top, right, and bottom.  The left constraint connects to the left `Container View` you created earlier.
+Add constraints to the containing `ScrollView` for top, right, and bottom.  Connect horizontally to the left `Container View` you created earlier.
 
 Constraint both `Equal height` and `Equal width` to the ContainerVC's embedded `View`.  Note: do not constrain these to the ScrollView.
 
