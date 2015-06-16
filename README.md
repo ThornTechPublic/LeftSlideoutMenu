@@ -36,7 +36,9 @@ class ContainerVC : UIViewController {
 
 ### ScrollView
 
-Inside Container View Controller, drop in a `ScrollView` and wire the IBOutlet
+Inside Container View Controller, drop in a `ScrollView` and add constraints in all directions.
+
+Wire the IBOutlet to ContainerVC:
 
 ```
 @IBOutlet weak var scrollView: UIScrollView!
