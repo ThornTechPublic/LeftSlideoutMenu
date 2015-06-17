@@ -107,11 +107,11 @@ To create a little visual separation between the two containers, add a `Runtime 
 
 ### First and Second Tabs
 
-Embed each tab inside a `Navigation Controller`.  
+Embed each tab inside a `Navigation Controller`.  Doing so gives you a free `Navigation Bar`.
 
-Drag a `Bar Button Item` into the top left corner of each `View Controller`.
+Drag a `Bar Button Item` into the top left corner of each `Navigation Bar`.
 
-Create an `IBAction` for each controller.  These will fire off a `NSNotification` to the great-grandfather ContainerVC to toggle the menu.
+Wire an `IBAction` to each controller.  These will fire off a `NSNotification` to the great-grandfather `ContainerVC` to toggle the menu.
 
 ```
 @IBAction func toggleMenu(sender: AnyObject) {
