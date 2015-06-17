@@ -125,9 +125,9 @@ Most of the Storyboard configuration is done.  All that's left is to copy the co
 
 The code accomplishes the following:
 
-* Open and close the menu by changing the contentOffset-x
 * Listen for the "toggleMenu" notification
 * Implement the toggleMenu method by opening or closing based on the current contentOffset.x
+* Open and close the menu by changing the contentOffset-x
 
 ### That's it
 
