@@ -31,7 +31,7 @@ Uncheck the box `Use Size Classes` for now, simply for the sake of screen real e
 
 ### Containing View Controller
 
-Drop a `View Controller` onto the Storyboard.  This is your entry point into the app, and acts as a big wrapper.  Think of a [Laundry Sorting Cart](http://www.amazon.com/DecoBros-Heavy-Duty-3-Bag-Laundry-Sorter/dp/B00HLSTYNS/) that can hold lights and darks.  Or in this case, a Menu and Tab Bar Controller.
+Drop a `View Controller` onto the Storyboard.  This is your entry point into the app, and acts as a big wrapper.  Think of a [Laundry Sorting Cart](http://www.amazon.com/DecoBros-Heavy-Duty-3-Bag-Laundry-Sorter/dp/B00HLSTYNS/) that can hold baskets for lights and darks.  Or in this case, a Menu and Tab Bar Controller.
 
 Check the box for `Is Initial View Controller`.
 
