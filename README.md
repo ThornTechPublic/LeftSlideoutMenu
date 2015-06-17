@@ -123,3 +123,7 @@ The code accomplishes the following:
 * Open and close the menu by changing the contentOffset-x
 * Listen for the "toggleMenu" notification
 * Implement the toggleMenu method by opening or closing based on the current contentOffset.x
+
+### That's it
+
+Build and run, and hopefully you have a simple slideout left menu on which to build the rest of your app.
