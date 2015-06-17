@@ -90,7 +90,7 @@ Constraint both `Equal height` and `Equal width` to the ContainerVC's embedded `
 
 ![right container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/rightConstraints.png)
 
-Here's a short clip of setting the Equal height and width constraints to the View:
+Here's a short demo of setting the `Equal height` and `width` constraints to the `View`:
 
 ![animated gif of setting constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/setConstraintsFromContainers.gif)
 
