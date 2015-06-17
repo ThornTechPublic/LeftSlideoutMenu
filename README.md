@@ -4,6 +4,11 @@ This is a sample project with a left slideout menu, and a two-tabbed application
 
 ![animated gif demo](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuVid.gif)
 
+## Use Case
+
+* You lean heavily on Storyboard use, and value separation of UI code over portability.
+* You're using Swift, and want to avoid bridging Objective-C modules when possible
+
 ## Theory
 
 Apps tend to have a top level container like a `Tab Bar Controller` that cannot be embedded inside a View.  The approach here is to wrap the main body and the left menu each inside a `Container View`.  Now both of these elements can be arranged inside a wrapper `View Controller`.  
@@ -46,11 +51,11 @@ class ContainerVC : UIViewController {
 
 Inside Container View Controller, drop in a `ScrollView` and add constraints in all directions.
 
-Check the box for `Scrolling Enabled`.
+Check the box for `Scrolling Enabled`.  This allows you to pan the screen to slide the menu.  You might need to disable this if your app uses horizontally scrolling elements.
 
-Check the box for `Paging Enabled`.
+Check the box for `Paging Enabled`.  This snaps the menu to either the open or closed state.
 
-Uncheck the box for `Bounces`.
+Uncheck the box for `Bounces`.  You don't really want to scroll past the right edge of the Tab Bar Controller.
 
 ![scrollview properties](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/scrollingEnabled.png)
 
