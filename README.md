@@ -25,7 +25,7 @@ Since Storyboard changes aren't really portable across projects, here is a recip
 
 Start with a `Tabbed Application`.  This is just to demonstrate that even a `Tab Bar Controller` can be used with slideout menus.
 
-Uncheck the box `Use Size Classes` for now, to give yourself some elbow room.
+Uncheck the box `Use Size Classes` for now, simply for the sake of screen real estate.
 
 ![tabbed application](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/tabbedApplicationIcon.png)
 
