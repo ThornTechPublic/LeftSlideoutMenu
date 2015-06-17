@@ -72,10 +72,6 @@ Hard-code the width to 260.
 
 Add a constraint for `Equal height` with the ContainerVC's embedded `View`.  Note: don't constrain the height to the ScrollView.
 
-![animated gif of setting constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/setConstraintsFromContainers.gif)
-
-It should look like this:
-
 ![left container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuConstraints.png)
 
 Delete the embedded `View Controller` that came with the `Container View`.
@@ -93,6 +89,10 @@ Add constraints to the containing `ScrollView` for top, right, and bottom.  Conn
 Constraint both `Equal height` and `Equal width` to the ContainerVC's embedded `View`.  Note: do not constrain these to the ScrollView.
 
 ![right container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/rightConstraints.png)
+
+Here's a short clip of setting the Equal height and width constraints to the View:
+
+![animated gif of setting constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/setConstraintsFromContainers.gif)
 
 Again, delete the embedded View Controller that came free with the `Container View`.  Instead, create an `embed` segue to the `Tab Bar Controller`.
 
