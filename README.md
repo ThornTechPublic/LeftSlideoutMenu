@@ -127,3 +127,9 @@ The code accomplishes the following:
 ### That's it
 
 Build and run, and hopefully you have a simple slideout left menu on which to build the rest of your app.
+
+### Still confused?
+
+The `ScrollView` is pretty confusing to begin with.  One common trick is to have a rigidly defined view on the inside.  In this case, the left and right container views are constrained to the device (View Controller's embedded `View`) width and height.  The `ScrollView` is like a flexible wrapper.
+
+Here's an excellent video tutorial on [Ray Wenderlich](http://www.raywenderlich.com/video-tutorials#swiftscrollview) that covers the `ScrollView`.
