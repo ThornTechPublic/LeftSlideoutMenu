@@ -72,6 +72,10 @@ Hard-code the width to 260.
 
 Add a constraint for `Equal height` with the ContainerVC's embedded `View`.  Note: don't constrain the height to the ScrollView.
 
+![animated gif of setting constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/setConstraintsFromContainers.gif)
+
+It should look like this:
+
 ![left container constraints](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuConstraints.png)
 
 Delete the embedded `View Controller` that came with the `Container View`.
