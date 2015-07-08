@@ -2,6 +2,8 @@
 
 This is a sample project with a left slideout menu, and a two-tabbed application for the main body.  The majority of the setup is done in the Storyboard.
 
+This repo is tied to [this blog post](http://www.thorntech.com/2015/06/want-to-implement-a-slideout-menu-in-your-swift-app-heres-how/).
+
 ![animated gif demo](https://github.com/ThornTechPublic/LeftSlideoutMenu/blob/master/GitHubImages/leftMenuVid.gif)
 
 ## Use Case
