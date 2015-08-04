@@ -12,7 +12,7 @@ class ContainerVC : UIViewController {
         
         // Initially close menu programmatically.  This needs to be done on the main thread initially in order to work.
         dispatch_async(dispatch_get_main_queue()) {
-            self.closeMenu()
+            self.closeMenu(animated: false)
         }
                 
         // Tab bar controller's child pages have a top-left button toggles the menu
@@ -32,12 +32,13 @@ class ContainerVC : UIViewController {
     }
     
     // Use scrollview content offset-x to slide the menu.
-    func closeMenu(){
-        scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: true)
+    func closeMenu(animated:Bool = true){
+        scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: animated)
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
+        println("opening menu")
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
