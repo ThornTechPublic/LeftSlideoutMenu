@@ -20,11 +20,19 @@ class ContainerVC : UIViewController {
         
         // Close the menu when the device rotates
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        
+        // LeftMenu sends openModalWindow
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openModalWindow", name: "openModalWindow", object: nil)
+
     }
     
     // Cleanup notifications added in viewDidLoad
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
+    func openModalWindow(){
+        performSegueWithIdentifier("openModalWindow", sender: nil)
     }
     
     func toggleMenu(){

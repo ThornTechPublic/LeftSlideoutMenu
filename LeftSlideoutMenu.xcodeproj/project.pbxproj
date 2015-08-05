@@ -15,6 +15,9 @@
 		FCDFC0911B2F7F120015115E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCDFC08F1B2F7F120015115E /* LaunchScreen.xib */; };
 		FCDFC09D1B2F7F120015115E /* LeftSlideoutMenuTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC09C1B2F7F120015115E /* LeftSlideoutMenuTests.swift */; };
 		FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0A61B2F87B00015115E /* ContainerVC.swift */; };
+		FCE2F37B1B7248BC00773729 /* LeftMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2F37A1B7248BC00773729 /* LeftMenu.swift */; };
+		FCE2F37D1B724B6B00773729 /* ModalWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2F37C1B724B6B00773729 /* ModalWindow.swift */; };
+		FCE2F37F1B724C4D00773729 /* TabVCTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE2F37E1B724C4D00773729 /* TabVCTemplate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		FCDFC09B1B2F7F120015115E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFC09C1B2F7F120015115E /* LeftSlideoutMenuTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LeftSlideoutMenuTests.swift; sourceTree = "<group>"; };
 		FCDFC0A61B2F87B00015115E /* ContainerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContainerVC.swift; sourceTree = "<group>"; };
+		FCE2F37A1B7248BC00773729 /* LeftMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LeftMenu.swift; sourceTree = "<group>"; };
+		FCE2F37C1B724B6B00773729 /* ModalWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalWindow.swift; sourceTree = "<group>"; };
+		FCE2F37E1B724C4D00773729 /* TabVCTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabVCTemplate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,9 @@
 				FCDFC0A61B2F87B00015115E /* ContainerVC.swift */,
 				FCDFC0861B2F7F110015115E /* FirstViewController.swift */,
 				FCDFC0881B2F7F110015115E /* SecondViewController.swift */,
+				FCE2F37E1B724C4D00773729 /* TabVCTemplate.swift */,
+				FCE2F37A1B7248BC00773729 /* LeftMenu.swift */,
+				FCE2F37C1B724B6B00773729 /* ModalWindow.swift */,
 				FCDFC08A1B2F7F110015115E /* Main.storyboard */,
 				FCDFC08D1B2F7F120015115E /* Images.xcassets */,
 				FCDFC08F1B2F7F120015115E /* LaunchScreen.xib */,
@@ -218,8 +227,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FCE2F37B1B7248BC00773729 /* LeftMenu.swift in Sources */,
 				FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */,
 				FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */,
+				FCE2F37D1B724B6B00773729 /* ModalWindow.swift in Sources */,
+				FCE2F37F1B724C4D00773729 /* TabVCTemplate.swift in Sources */,
 				FCDFC0851B2F7F110015115E /* AppDelegate.swift in Sources */,
 				FCDFC0871B2F7F110015115E /* FirstViewController.swift in Sources */,
 			);
