@@ -116,7 +116,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y77-rI-f8X">
-                                <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
+                                <rect key="frame" x="-260" y="0.0" width="828" height="568"/>
                                 <subviews>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pXN-e8-V5x" userLabel="left container">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="568"/>
@@ -153,7 +153,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="Jt2-sf-GL3" secondAttribute="width" id="5v8-vL-Mi9"/>
-                            <constraint firstItem="y77-rI-f8X" firstAttribute="leading" secondItem="qhg-cS-zcg" secondAttribute="leading" id="8Hd-ab-Mfc"/>
+                            <constraint firstItem="y77-rI-f8X" firstAttribute="leading" secondItem="qhg-cS-zcg" secondAttribute="leading" constant="-260" id="8Hd-ab-Mfc"/>
                             <constraint firstAttribute="trailing" secondItem="y77-rI-f8X" secondAttribute="trailing" id="G7a-t1-JQf"/>
                             <constraint firstItem="tM1-tl-GF1" firstAttribute="top" secondItem="y77-rI-f8X" secondAttribute="bottom" id="GgL-fN-hSZ"/>
                             <constraint firstItem="y77-rI-f8X" firstAttribute="top" secondItem="qhg-cS-zcg" secondAttribute="top" id="mDR-KB-BrN"/>
@@ -349,6 +349,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4uO-pj-oaV"/>
+        <segue reference="Q8K-VK-t7D"/>
     </inferredMetricsTieBreakers>
 </document>

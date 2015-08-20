@@ -18,9 +18,6 @@ class ContainerVC : UIViewController {
         // Tab bar controller's child pages have a top-left button toggles the menu
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleMenu", name: "toggleMenu", object: nil)
         
-        // Close the menu when the device rotates
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
-        
         // LeftMenu sends openModalWindow
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "openModalWindow", name: "openModalWindow", object: nil)
 
@@ -36,30 +33,18 @@ class ContainerVC : UIViewController {
     }
     
     func toggleMenu(){
-        scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
+        scrollView.contentOffset.x == 0  ? openMenu() : closeMenu()
     }
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){
-        scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: animated)
+        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: animated)
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
         println("opening menu")
-        scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-    }
-    
-    // see http://stackoverflow.com/questions/25666269/ios8-swift-how-to-detect-orientation-change
-    // close the menu when rotating to landscape.
-    // Note: you have to put this on the main queue in order for it to work
-    func rotated(){
-        if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
-            dispatch_async(dispatch_get_main_queue()) {
-                println("closing menu on rotate")
-                self.closeMenu()
-            }
-        }
+        scrollView.setContentOffset(CGPoint(x: -leftMenuWidth, y: 0), animated: true)
     }
     
 }
