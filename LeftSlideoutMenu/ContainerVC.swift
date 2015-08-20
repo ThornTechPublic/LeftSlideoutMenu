@@ -63,3 +63,9 @@ class ContainerVC : UIViewController {
     }
     
 }
+
+extension ContainerVC : UIScrollViewDelegate {
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        println("scrollView.contentOffset.x:: \(scrollView.contentOffset.x)")
+    }
+}
