@@ -309,7 +309,7 @@
         <!--View Controller-->
         <scene sceneID="6Sx-Ca-51I">
             <objects>
-                <viewController id="Res-mf-cx8" sceneMemberID="viewController">
+                <viewController hidesBottomBarWhenPushed="YES" id="Res-mf-cx8" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tie-nk-gXg"/>
                         <viewControllerLayoutGuide type="bottom" id="alN-Td-WsD"/>
