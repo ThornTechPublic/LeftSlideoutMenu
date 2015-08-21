@@ -10,6 +10,9 @@ import UIKit
 
 class TabVCTemplate : UIViewController {
     
+    // placeholder for the tab's index
+    var selectedTab = 0
+    
     override func viewDidLoad() {
         
         // Sent from LeftMenu
@@ -22,7 +25,9 @@ class TabVCTemplate : UIViewController {
     }
     
     func openPushWindow(){
-        performSegueWithIdentifier("openPushWindow", sender: nil)
+        if tabBarController?.selectedIndex == selectedTab {
+            performSegueWithIdentifier("openPushWindow", sender: nil)            
+        }
     }
     
 }
