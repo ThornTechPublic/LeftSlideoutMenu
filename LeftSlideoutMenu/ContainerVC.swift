@@ -2,8 +2,16 @@ import UIKit
 
 class ContainerVC : UIViewController {
     
+    enum MenuState {
+        case LeftOpen
+        case Closed
+        case RightOpen
+    }
+    
+    var menuState = MenuState.LeftOpen
+    
     // This value matches the left menu's width in the Storyboard
-    let leftMenuWidth:CGFloat = 260
+    let menuWidth:CGFloat = 260
     
     // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
@@ -16,7 +24,10 @@ class ContainerVC : UIViewController {
         }
                 
         // Tab bar controller's child pages have a top-left button toggles the menu
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleMenu", name: "toggleMenu", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleLeftMenu", name: "toggleLeftMenu", object: nil)
+
+        // Tab bar controller's child pages have a top-left button toggles the menu
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleRightMenu", name: "toggleRightMenu", object: nil)
         
         // Close the menu when the device rotates
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
@@ -35,19 +46,45 @@ class ContainerVC : UIViewController {
         performSegueWithIdentifier("openModalWindow", sender: nil)
     }
     
-    func toggleMenu(){
-        scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
+    func toggleLeftMenu(){
+        switch menuState {
+        case .LeftOpen:
+            closeMenu()
+        case .Closed:
+            openLeftMenu()
+        case .RightOpen:
+            closeMenu()
+        }
+    }
+    
+    func toggleRightMenu(){
+        switch menuState {
+        case .LeftOpen:
+            closeMenu()
+        case .Closed:
+            openRightMenu()
+        case .RightOpen:
+            closeMenu()
+        }
     }
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){
-        scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: animated)
+        scrollView.setContentOffset(CGPoint(x: menuWidth, y: 0), animated: animated)
+        self.menuState = MenuState.Closed
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
-    func openMenu(){
-        println("opening menu")
+    func openLeftMenu(){
+        println("opening left menu")
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        self.menuState = MenuState.LeftOpen
+    }
+    
+    func openRightMenu(){
+        println("opening right menu")
+        scrollView.setContentOffset(CGPoint(x: menuWidth*2, y: 0), animated: true)
+        self.menuState = MenuState.RightOpen
     }
     
     // see http://stackoverflow.com/questions/25666269/ios8-swift-how-to-detect-orientation-change
@@ -86,6 +123,7 @@ extension ContainerVC : UIScrollViewDelegate {
     // 3. disable paging altogether.  works, but at the loss of a feature
     // 4. nest the scrollview inside UIView, so UIKit doesn't mess with it.  may have worked before,
     //    but not anymore.
+    /*
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {
         scrollView.pagingEnabled = true
     }
@@ -93,4 +131,5 @@ extension ContainerVC : UIScrollViewDelegate {
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         scrollView.pagingEnabled = false
     }
+*/
 }

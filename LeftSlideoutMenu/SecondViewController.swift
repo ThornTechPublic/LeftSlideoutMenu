@@ -9,8 +9,11 @@ class SecondViewController: TabVCTemplate {
     }
     
     @IBAction func toggleMenu(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleLeftMenu", object: nil)
     }
 
+    @IBAction func toggleRightMenu(sender: AnyObject) {
+        NSNotificationCenter.defaultCenter().postNotificationName("toggleRightMenu", object: nil)
+    }
 }
 
