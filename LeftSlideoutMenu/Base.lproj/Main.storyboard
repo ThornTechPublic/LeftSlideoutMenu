@@ -48,6 +48,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Res-mf-cx8" kind="push" identifier="openPushWindow" id="Q8K-VK-t7D"/>
+                        <segue destination="D6K-V8-ogW" kind="modal" identifier="OpenModalMask" modalPresentationStyle="currentContext" animates="NO" id="8ar-Vz-hMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -97,6 +98,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Res-mf-cx8" kind="push" identifier="openPushWindow" id="4uO-pj-oaV"/>
+                        <segue destination="D6K-V8-ogW" kind="modal" identifier="OpenModalMask" modalPresentationStyle="currentContext" animates="NO" id="GpJ-LW-fRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -291,6 +293,33 @@
             </objects>
             <point key="canvasLocation" x="-428" y="402"/>
         </scene>
+        <!--Modal Mask-->
+        <scene sceneID="vcd-el-mnK">
+            <objects>
+                <viewController id="D6K-V8-ogW" customClass="ModalMask" customModule="LeftSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4SE-k4-eIy"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ugx-uW-d6r"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="89V-Iq-3hA">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="hFI-xi-JDD" appends="YES" id="wtC-zP-nKa"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-Pv-KHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hFI-xi-JDD">
+                    <connections>
+                        <action selector="tappedModalMask:" destination="D6K-V8-ogW" id="I5T-ZW-j9C"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="182" y="408"/>
+        </scene>
         <!--Second-->
         <scene sceneID="LiM-LI-2Yo">
             <objects>
@@ -371,6 +400,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="4uO-pj-oaV"/>
+        <segue reference="Q8K-VK-t7D"/>
+        <segue reference="8ar-Vz-hMA"/>
     </inferredMetricsTieBreakers>
 </document>

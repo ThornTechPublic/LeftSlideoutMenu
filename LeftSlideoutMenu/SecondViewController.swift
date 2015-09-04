@@ -10,6 +10,8 @@ class SecondViewController: TabVCTemplate {
     
     @IBAction func toggleMenu(sender: AnyObject) {
         NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+        // open modal mask
+        performSegueWithIdentifier("OpenModalMask", sender: nil)
     }
 
 }
