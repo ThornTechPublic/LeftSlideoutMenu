@@ -24,6 +24,11 @@ class TabVCTemplate : UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
+    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        view.endEditing(true)
+    }
+    
     func openPushWindow(){
         if tabBarController?.selectedIndex == selectedTab {
             performSegueWithIdentifier("openPushWindow", sender: nil)            
