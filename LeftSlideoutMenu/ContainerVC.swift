@@ -18,6 +18,8 @@ class ContainerVC : UIViewController {
         // Tab bar controller's child pages have a top-left button toggles the menu
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleMenu", name: "toggleMenu", object: nil)
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "closeMenuViaNotification", name: "closeMenuViaNotification", object: nil)
+        
         // Close the menu when the device rotates
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
         
@@ -37,6 +39,12 @@ class ContainerVC : UIViewController {
     
     func toggleMenu(){
         scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
+    }
+    
+    // This wrapper function is necessary because
+    // closeMenu params do not match up with Notification
+    func closeMenuViaNotification(){
+        closeMenu()
     }
     
     // Use scrollview content offset-x to slide the menu.

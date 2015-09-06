@@ -33,7 +33,7 @@ extension LeftMenu {
         }
         
         // also close the menu
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
         
     }
     
