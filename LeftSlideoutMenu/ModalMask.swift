@@ -11,7 +11,7 @@ import UIKit
 class ModalMask : UIViewController {
     
     @IBAction func tappedModalMask(sender: AnyObject) {
-        NSNotificationCenter.defaultCenter().postNotificationName("toggleMenu", object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
         dismissViewControllerAnimated(false, completion: nil)
     }
 }
