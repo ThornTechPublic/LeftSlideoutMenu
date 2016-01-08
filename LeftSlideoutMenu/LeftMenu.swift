@@ -9,47 +9,38 @@
 import UIKit
 
 class LeftMenu : UITableViewController {
-    
-    let menuOptions = ["Open Modal", "Open Push"]
-    
-}
-
-// MARK: - UITableViewDelegate methods
-
-extension LeftMenu {
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        switch indexPath.row {
-        case 0:
-            // ContainerVC.swift listens for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openModalWindow", object: nil)
-        case 1:
-            // Both FirstViewController and SecondViewController listen for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openPushWindow", object: nil)
-        default:
-            println("indexPath.row:: \(indexPath.row)")
-        }
-        
-        // also close the menu
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
-        
-    }
-    
+    var isLoggedIn = false
 }
 
 // MARK: - UITableViewDataSource methods
 
 extension LeftMenu {
     
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 3
+    }
+    
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        switch section {
+        case 1:
+            return isLoggedIn ? 1 : 0
+        default:
+            return 1
+        }
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
-        cell.textLabel?.text = menuOptions[indexPath.row]
+        switch indexPath.section {
+        case 0:
+            cell.textLabel?.text = "Home"
+        case 1:
+            cell.textLabel?.text = "My Account"
+        case 2:
+            cell.textLabel?.text = isLoggedIn ? "Log Out" : "Log In"
+        default:
+            cell.textLabel?.text = ""
+        }
         return cell
     }
     

@@ -13,13 +13,6 @@ class TabVCTemplate : UIViewController {
     // placeholder for the tab's index
     var selectedTab = 0
     
-    override func viewDidLoad() {
-        
-        // Sent from LeftMenu
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openPushWindow", name: "openPushWindow", object: nil)
-        
-    }
-    
     deinit {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }

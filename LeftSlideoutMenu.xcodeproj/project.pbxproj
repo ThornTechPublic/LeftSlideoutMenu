@@ -171,6 +171,7 @@
 		FCDFC0771B2F7F110015115E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Thorn Technologies";
 				TargetAttributes = {
