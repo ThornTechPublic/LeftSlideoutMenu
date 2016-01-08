@@ -38,7 +38,12 @@ class ContainerVC : UIViewController {
     }
     
     func toggleMenu(){
-        scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
+        switch Menu.sharedInstance.state {
+        case .Open:
+            closeMenu()
+        case .Closed:
+            openMenu()
+        }
     }
     
     // This wrapper function is necessary because
@@ -49,12 +54,13 @@ class ContainerVC : UIViewController {
     
     // Use scrollview content offset-x to slide the menu.
     func closeMenu(animated:Bool = true){
+        Menu.sharedInstance.state = .Closed
         scrollView.setContentOffset(CGPoint(x: leftMenuWidth, y: 0), animated: animated)
     }
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
-        println("opening menu")
+        Menu.sharedInstance.state = .Open
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
@@ -74,7 +80,6 @@ class ContainerVC : UIViewController {
 
 extension ContainerVC : UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        println("scrollView.contentOffset.x:: \(scrollView.contentOffset.x)")
     }
     
     // http://www.4byte.cn/question/49110/uiscrollview-change-contentoffset-when-change-frame.html
@@ -100,5 +105,11 @@ extension ContainerVC : UIScrollViewDelegate {
     
     func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
         scrollView.pagingEnabled = false
+        if scrollView.contentOffset.x == 0 {
+            // use just opened the menu
+            Menu.sharedInstance.state = .Open
+        } else {
+            Menu.sharedInstance.state = .Closed
+        }
     }
 }

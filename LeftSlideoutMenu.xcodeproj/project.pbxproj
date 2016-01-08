@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FC97B75F1C3F47DD009427C6 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC97B75E1C3F47DD009427C6 /* Menu.swift */; };
 		FCDFC0851B2F7F110015115E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0841B2F7F110015115E /* AppDelegate.swift */; };
 		FCDFC0871B2F7F110015115E /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0861B2F7F110015115E /* FirstViewController.swift */; };
 		FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCDFC0881B2F7F110015115E /* SecondViewController.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FC97B75E1C3F47DD009427C6 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		FCDFC07F1B2F7F110015115E /* LeftSlideoutMenu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LeftSlideoutMenu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCDFC0831B2F7F110015115E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCDFC0841B2F7F110015115E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				FCDFC0881B2F7F110015115E /* SecondViewController.swift */,
 				FCE2F37E1B724C4D00773729 /* TabVCTemplate.swift */,
 				FCE2F37A1B7248BC00773729 /* LeftMenu.swift */,
+				FC97B75E1C3F47DD009427C6 /* Menu.swift */,
 				FCE2F37C1B724B6B00773729 /* ModalWindow.swift */,
 				FCDFC08A1B2F7F110015115E /* Main.storyboard */,
 				FCDFC08D1B2F7F120015115E /* Images.xcassets */,
@@ -228,6 +231,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC97B75F1C3F47DD009427C6 /* Menu.swift in Sources */,
 				FCE2F37B1B7248BC00773729 /* LeftMenu.swift in Sources */,
 				FCDFC0A71B2F87B00015115E /* ContainerVC.swift in Sources */,
 				FCDFC0891B2F7F110015115E /* SecondViewController.swift in Sources */,

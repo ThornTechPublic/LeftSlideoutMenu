@@ -17,7 +17,7 @@ class LeftMenu : UITableViewController {
 extension LeftMenu {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 3
+        return 20
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,9 +39,15 @@ extension LeftMenu {
         case 2:
             cell.textLabel?.text = isLoggedIn ? "Log Out" : "Log In"
         default:
-            cell.textLabel?.text = ""
+            cell.textLabel?.text = " ... "
         }
         return cell
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        if Menu.sharedInstance.state == .Open {
+            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+        }
     }
     
 }
