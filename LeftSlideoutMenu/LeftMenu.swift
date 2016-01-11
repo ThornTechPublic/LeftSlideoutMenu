@@ -29,7 +29,7 @@ extension LeftMenu {
             // Both FirstViewController and SecondViewController listen for this
             NSNotificationCenter.defaultCenter().postNotificationName("openPushWindow", object: nil)
         default:
-            println("indexPath.row:: \(indexPath.row)")
+            print("indexPath.row:: \(indexPath.row)")
         }
         
         // also close the menu
@@ -48,7 +48,7 @@ extension LeftMenu {
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
         cell.textLabel?.text = menuOptions[indexPath.row]
         return cell
     }
