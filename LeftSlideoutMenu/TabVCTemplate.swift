@@ -24,7 +24,7 @@ class TabVCTemplate : UIViewController {
         NSNotificationCenter.defaultCenter().removeObserver(self)
     }
     
-    override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
         view.endEditing(true)
     }
