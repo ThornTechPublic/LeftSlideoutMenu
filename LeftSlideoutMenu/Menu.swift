@@ -15,11 +15,5 @@ enum MenuState {
 
 class Menu {
     static let sharedInstance = Menu()
-    var state:MenuState = .Closed {
-        didSet {
-            if state == .Closed {
-                UIApplication.sharedApplication().setStatusBarHidden(false, withAnimation: UIStatusBarAnimation.Slide)
-            }
-        }
-    }
+    var state:MenuState = .Closed 
 }

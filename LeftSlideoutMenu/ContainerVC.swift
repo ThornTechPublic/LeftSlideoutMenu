@@ -5,6 +5,14 @@ class ContainerVC : UIViewController {
     // This value matches the left menu's width in the Storyboard
     let leftMenuWidth:CGFloat = 260
     
+    override func prefersStatusBarHidden() -> Bool {
+        return Menu.sharedInstance.state == .Open 
+    }
+    
+    override func preferredStatusBarUpdateAnimation() -> UIStatusBarAnimation {
+        return UIStatusBarAnimation.Slide
+    }
+    
     // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
     
@@ -41,6 +49,7 @@ class ContainerVC : UIViewController {
         switch Menu.sharedInstance.state {
         case .Open:
             closeMenu()
+            setNeedsStatusBarAppearanceUpdate()
         case .Closed:
             openMenu()
         }
@@ -110,6 +119,7 @@ extension ContainerVC : UIScrollViewDelegate {
             Menu.sharedInstance.state = .Open
         } else {
             Menu.sharedInstance.state = .Closed
+            setNeedsStatusBarAppearanceUpdate()
         }
     }
 }

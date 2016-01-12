@@ -46,7 +46,7 @@ extension LeftMenu {
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
         if Menu.sharedInstance.state == .Open {
-            UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: UIStatusBarAnimation.Slide)
+            setNeedsStatusBarAppearanceUpdate()
         }
     }
     
