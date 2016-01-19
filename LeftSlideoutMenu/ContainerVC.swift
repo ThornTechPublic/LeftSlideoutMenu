@@ -3,13 +3,29 @@ import UIKit
 class ContainerVC : UIViewController {
     
     // This value matches the left menu's width in the Storyboard
-    let leftMenuWidth:CGFloat = 260
+    var leftMenuWidth:CGFloat {
+        get {
+            let screenPercentage:CGFloat = (UIDevice.currentDevice().userInterfaceIdiom == .Pad) ? 0.33 : 0.75
+            let bounds = UIScreen.mainScreen().bounds
+            let width = bounds.width
+            let height = bounds.height
+            let shorterDimension = min(width, height)
+            return shorterDimension * screenPercentage
+        }
+    }
     
     // Need a handle to the scrollView to open and close the menu
     @IBOutlet weak var scrollView: UIScrollView!
     
+    @IBOutlet weak var leftContainerWidth: NSLayoutConstraint! {
+        didSet {
+            if let leftContainerWidth = leftContainerWidth {
+                leftContainerWidth.constant = leftMenuWidth
+            }
+        }
+    }
+    
     override func viewDidLoad() {
-        
         // Initially close menu programmatically.  This needs to be done on the main thread initially in order to work.
         dispatch_async(dispatch_get_main_queue()) {
             self.closeMenu(false)
