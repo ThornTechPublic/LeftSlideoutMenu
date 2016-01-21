@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4NJ-o1-zZ9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="4NJ-o1-zZ9">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -48,7 +49,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Res-mf-cx8" kind="push" identifier="openPushWindow" id="Q8K-VK-t7D"/>
-                        <segue destination="D6K-V8-ogW" kind="modal" identifier="OpenModalMask" animates="NO" id="8ar-Vz-hMA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
@@ -74,7 +74,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Loaded by SecondViewController" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NDk-cv-Gan">
                                 <rect key="frame" x="176" y="313" width="216" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -98,7 +98,6 @@
                     </navigationItem>
                     <connections>
                         <segue destination="Res-mf-cx8" kind="push" identifier="openPushWindow" id="4uO-pj-oaV"/>
-                        <segue destination="D6K-V8-ogW" kind="modal" identifier="OpenModalMask" animates="NO" id="GpJ-LW-fRs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
@@ -195,7 +194,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-so-pg2">
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mba-so-pg2">
                                 <rect key="frame" x="264" y="30" width="40" height="30"/>
                                 <state key="normal" title="Close">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -229,11 +228,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" textLabel="NBg-g6-ulF" style="IBUITableViewCellStyleDefault" id="00o-pt-Eos">
+                                <rect key="frame" x="0.0" y="66" width="260" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="00o-pt-Eos" id="G9A-ah-iA3">
+                                    <rect key="frame" x="0.0" y="0.0" width="227" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NBg-g6-ulF">
+                                            <rect key="frame" x="15" y="0.0" width="210" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -268,6 +270,7 @@
                     <connections>
                         <segue destination="5LP-xj-DDg" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="OP4-Ub-7wy" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
+                        <segue destination="D6K-V8-ogW" kind="modal" identifier="OpenModalMask" animates="NO" id="dAm-wo-oGC"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -296,7 +299,13 @@
         <!--Modal Mask-->
         <scene sceneID="vcd-el-mnK">
             <objects>
-                <viewController id="D6K-V8-ogW" customClass="ModalMask" customModule="LeftSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-Pv-KHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="hFI-xi-JDD">
+                    <connections>
+                        <action selector="tappedModalMask:" destination="D6K-V8-ogW" id="I5T-ZW-j9C"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <viewController modalPresentationStyle="overCurrentContext" id="D6K-V8-ogW" customClass="ModalMask" customModule="LeftSlideoutMenu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4SE-k4-eIy"/>
                         <viewControllerLayoutGuide type="bottom" id="Ugx-uW-d6r"/>
@@ -311,12 +320,6 @@
                         </connections>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Bp3-Pv-KHo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="hFI-xi-JDD">
-                    <connections>
-                        <action selector="tappedModalMask:" destination="D6K-V8-ogW" id="I5T-ZW-j9C"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="182" y="408"/>
         </scene>
@@ -351,7 +354,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="568" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Controller pushed from either of the tabs' Navigation Controllers." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flo-xF-Y3q">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="View Controller pushed from either of the tabs' Navigation Controllers." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flo-xF-Y3q">
                                 <rect key="frame" x="16" y="263" width="536" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -394,13 +397,7 @@
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
-    </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GpJ-LW-fRs"/>
         <segue reference="Q8K-VK-t7D"/>
     </inferredMetricsTieBreakers>
 </document>
