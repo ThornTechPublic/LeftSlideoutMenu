@@ -12,7 +12,7 @@ class ContainerVC : UIViewController {
         
         // Initially close menu programmatically.  This needs to be done on the main thread initially in order to work.
         dispatch_async(dispatch_get_main_queue()) {
-            self.closeMenu(animated: false)
+            self.closeMenu(false)
         }
                 
         // Tab bar controller's child pages have a top-left button toggles the menu
@@ -54,7 +54,7 @@ class ContainerVC : UIViewController {
     
     // Open is the natural state of the menu because of how the storyboard is setup.
     func openMenu(){
-        println("opening menu")
+        print("opening menu")
         scrollView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
     }
     
@@ -64,7 +64,7 @@ class ContainerVC : UIViewController {
     func rotated(){
         if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
             dispatch_async(dispatch_get_main_queue()) {
-                println("closing menu on rotate")
+                print("closing menu on rotate")
                 self.closeMenu()
             }
         }
@@ -74,7 +74,7 @@ class ContainerVC : UIViewController {
 
 extension ContainerVC : UIScrollViewDelegate {
     func scrollViewDidScroll(scrollView: UIScrollView) {
-        println("scrollView.contentOffset.x:: \(scrollView.contentOffset.x)")
+        print("scrollView.contentOffset.x:: \(scrollView.contentOffset.x)")
     }
     
     // http://www.4byte.cn/question/49110/uiscrollview-change-contentoffset-when-change-frame.html
