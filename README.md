@@ -1,5 +1,11 @@
 # Create a Left Slideout Menu with Swift
 
+----
+
+**Update**: Check out this [updated blog post](http://www.thorntech.com/2016/03/ios-tutorial-make-interactive-slide-menu-swift/) which uses a better approach to creating slideout menus.
+
+----
+
 This is a sample project with a left slideout menu, and a two-tabbed application for the main body.  The majority of the setup is done in the Storyboard.
 
 This repo is tied to [this blog post](http://www.thorntech.com/2015/06/want-to-implement-a-slideout-menu-in-your-swift-app-heres-how/).
