@@ -11,39 +11,39 @@ class ContainerVC : UIViewController {
     override func viewDidLoad() {
         
         // Initially close menu programmatically.  This needs to be done on the main thread initially in order to work.
-        dispatch_async(dispatch_get_main_queue()) {
-            self.closeMenu(false)
+        DispatchQueue.main.async() {
+            self.closeMenu(animated: false)
         }
                 
         // Tab bar controller's child pages have a top-left button toggles the menu
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "toggleMenu", name: "toggleMenu", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ContainerVC.toggleMenu), name: NSNotification.Name(rawValue: "toggleMenu"), object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "closeMenuViaNotification", name: "closeMenuViaNotification", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ContainerVC.closeMenuViaNotification), name: NSNotification.Name(rawValue: "closeMenuViaNotification"), object: nil)
         
         // Close the menu when the device rotates
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "rotated", name: UIDeviceOrientationDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ContainerVC.rotated), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
         
         // LeftMenu sends openModalWindow
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openModalWindow", name: "openModalWindow", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(ContainerVC.openModalWindow), name: NSNotification.Name(rawValue: "openModalWindow"), object: nil)
 
     }
     
     // Cleanup notifications added in viewDidLoad
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    func openModalWindow(){
-        performSegueWithIdentifier("openModalWindow", sender: nil)
+    @objc func openModalWindow() {
+        performSegue(withIdentifier: "openModalWindow", sender: nil)
     }
     
-    func toggleMenu(){
+    @objc func toggleMenu() {
         scrollView.contentOffset.x == 0  ? closeMenu() : openMenu()
     }
     
     // This wrapper function is necessary because
     // closeMenu params do not match up with Notification
-    func closeMenuViaNotification(){
+    @objc func closeMenuViaNotification(){
         closeMenu()
     }
     
@@ -61,9 +61,9 @@ class ContainerVC : UIViewController {
     // see http://stackoverflow.com/questions/25666269/ios8-swift-how-to-detect-orientation-change
     // close the menu when rotating to landscape.
     // Note: you have to put this on the main queue in order for it to work
-    func rotated(){
-        if UIDeviceOrientationIsLandscape(UIDevice.currentDevice().orientation) {
-            dispatch_async(dispatch_get_main_queue()) {
+    @objc func rotated(){
+        if UIDeviceOrientationIsLandscape(UIDevice.current.orientation) {
+            DispatchQueue.main.async() {
                 print("closing menu on rotate")
                 self.closeMenu()
             }
@@ -73,7 +73,7 @@ class ContainerVC : UIViewController {
 }
 
 extension ContainerVC : UIScrollViewDelegate {
-    func scrollViewDidScroll(scrollView: UIScrollView) {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
         print("scrollView.contentOffset.x:: \(scrollView.contentOffset.x)")
     }
     
@@ -94,11 +94,11 @@ extension ContainerVC : UIScrollViewDelegate {
     // 3. disable paging altogether.  works, but at the loss of a feature
     // 4. nest the scrollview inside UIView, so UIKit doesn't mess with it.  may have worked before,
     //    but not anymore.
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        scrollView.pagingEnabled = true
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = true
     }
     
-    func scrollViewDidEndDecelerating(scrollView: UIScrollView) {
-        scrollView.pagingEnabled = false
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        scrollView.isPagingEnabled = false
     }
 }

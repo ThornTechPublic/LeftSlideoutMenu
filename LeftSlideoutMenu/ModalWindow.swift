@@ -10,8 +10,8 @@ import UIKit
 
 class ModalWindow : UIViewController {
     
-    @IBAction func close(sender: AnyObject) {
-        dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func close(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

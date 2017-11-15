@@ -18,22 +18,22 @@ class LeftMenu : UITableViewController {
 
 extension LeftMenu {
     
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath as IndexPath, animated: true)
         
         switch indexPath.row {
         case 0:
             // ContainerVC.swift listens for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openModalWindow", object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openModalWindow"), object: nil)
         case 1:
             // Both FirstViewController and SecondViewController listen for this
-            NSNotificationCenter.defaultCenter().postNotificationName("openPushWindow", object: nil)
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: "openPushWindow"), object: nil)
         default:
             print("indexPath.row:: \(indexPath.row)")
         }
         
         // also close the menu
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeMenuViaNotification"), object: nil)
         
     }
     
@@ -43,12 +43,12 @@ extension LeftMenu {
 
 extension LeftMenu {
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath as IndexPath)
         cell.textLabel?.text = menuOptions[indexPath.row]
         return cell
     }

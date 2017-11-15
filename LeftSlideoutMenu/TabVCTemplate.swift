@@ -16,22 +16,22 @@ class TabVCTemplate : UIViewController {
     override func viewDidLoad() {
         
         // Sent from LeftMenu
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "openPushWindow", name: "openPushWindow", object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(TabVCTemplate.openPushWindow), name: NSNotification.Name(rawValue: "openPushWindow"), object: nil)
         
     }
     
     deinit {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        NSNotificationCenter.defaultCenter().postNotificationName("closeMenuViaNotification", object: nil)
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "closeMenuViaNotification"), object: nil)
         view.endEditing(true)
     }
     
-    func openPushWindow(){
+    @objc func openPushWindow(){
         if tabBarController?.selectedIndex == selectedTab {
-            performSegueWithIdentifier("openPushWindow", sender: nil)            
+            performSegue(withIdentifier: "openPushWindow", sender: nil)
         }
     }
     
